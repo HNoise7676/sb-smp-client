@@ -46,11 +46,23 @@ def create_mrpack(output_name: str):
     files_to_pack = []
     total_uncompressed_size = 0
 
+    # Define exclusions
+    EXCLUDED_NAMES = {".git", ".gitignore", "build.py"}
+
     for root, dirs, files in os.walk(cwd):
+        # Modifying dirs in-place allows os.walk to skip excluded directories like .git
+        dirs[:] = [d for d in dirs if d not in EXCLUDED_NAMES]
+
         for file in files:
+            if file in EXCLUDED_NAMES:
+                continue
+
             file_path = Path(root) / file
+
+            # Skip the output file itself if it already exists
             if file_path.suffix.lower() == '.mrpack':
                 continue
+
             files_to_pack.append(file_path)
             total_uncompressed_size += file_path.stat().st_size
 
@@ -73,13 +85,14 @@ def create_mrpack(output_name: str):
 
         with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
             for file in files_to_pack:
-                if file.name == "index.json" and file.parent == cwd:
+                # Modrinth format: index.json is root, everything else is in overrides/
+                if file.name == "modrinth.index.json" and file.parent == cwd:
                     arcname = file.name
                 else:
                     arcname = os.path.join("overrides", file.relative_to(cwd))
 
                 zipf.write(file, arcname)
-                time.sleep(0.02)
+                time.sleep(0.01) # Small delay for visual effect
                 progress.update(task, advance=1, description=f"Packing [status.yellow]{file.name[:20]}[/status.yellow]")
 
         time.sleep(0.5)
@@ -87,13 +100,12 @@ def create_mrpack(output_name: str):
     final_size = output_path.stat().st_size
     ratio = (1 - (final_size / total_uncompressed_size)) * 100 if total_uncompressed_size > 0 else 0
 
-    # Fixed: Raw string (r"") to prevent SyntaxWarning
     ascii_header = Text(r"""
-   ____  ____    ____  __  __ ____
-  / ___|| __ )  / ___||  \/  |  _ \
-  \___ \|  _ \  \___ \| |\/| | |_) |
-   ___) | |_) |  ___) | |  | |  __/
-  |____/|____/  |____/|_|  |_|_|
+ ____  ____   ____  __  __ ____
+/ ___|| __ ) / ___||  \/  |  _ \
+\___ \|  _ \ \___ \| |\/| | |_) |
+ ___) | |_) | ___) | |  | |  __/
+|____/|____/ |____/|_|  |_|_|
     """, style="mr.green")
 
     info_table = Table.grid(padding=(0, 2))
@@ -107,7 +119,6 @@ def create_mrpack(output_name: str):
 
     footer = Text("\nThanks for using the StreakBusters SMP client.\nMake sure to report any bugs you find.", style="italic grey62")
 
-    # Fixed: Wrapping in Group() to allow Panel to render multiple items
     render_group = Group(ascii_header, info_table, footer)
 
     console.print(
@@ -133,5 +144,4 @@ if __name__ == "__main__":
     try:
         create_mrpack(name)
     except Exception as e:
-        # For debugging, you can use console.print_exception() here
         console.print(f"[error.red]Failure:[/error.red] {e}")
