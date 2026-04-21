@@ -47,7 +47,7 @@ def create_mrpack(output_name: str):
     total_uncompressed_size = 0
 
     # Define exclusions
-    EXCLUDED_NAMES = {".git", ".gitignore", "build.py"}
+    EXCLUDED_NAMES = {".git", ".gitignore", "build.py", "README.md"}
 
     for root, dirs, files in os.walk(cwd):
         # Modifying dirs in-place allows os.walk to skip excluded directories like .git
