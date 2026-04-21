@@ -1,130 +1,137 @@
 # /// script
-# dependencies = [
-#   "questionary==2.0.1",
-#   "rich==13.7.0",
-# ]
+# dependencies = ["rich"]
 # ///
 
 import os
-import json
 import zipfile
-import subprocess
+import argparse
+import time
 from pathlib import Path
-from rich.console import Console
+from rich.console import Console, Group
+from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
+from rich.theme import Theme
+from rich.style import Style
+from rich.prompt import Prompt
 from rich.panel import Panel
 from rich.table import Table
-from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn
-import questionary
+from rich.text import Text
 
-console = Console()
+# Modrinth-inspired color palette
+MR_GREEN = "#1BD96A"
+MR_DARK = "#111111"
 
-# Modrinth Brand Colors
-MODRINTH_GREEN = "#1bd96a"
-ERROR_RED = "#ff5555"
+modrinth_theme = Theme({
+    "mr.green": MR_GREEN,
+    "mr.dark": MR_DARK,
+    "bold.white": "bold #ffffff",
+    "status.yellow": "#FFD43B",
+    "error.red": "#FF4F4F",
+    "fetch.key": f"bold {MR_GREEN}",
+    "fetch.val": "#A0A0A0"
+})
 
-def get_git_changelog():
-    """Attempts to get the last 5 git commit messages for the changelog."""
-    try:
-        cmd = ["git", "log", "-5", "--pretty=format:- %s"]
-        changelog = subprocess.check_output(cmd).decode("utf-8")
-        return changelog if changelog else "- Initial release"
-    except:
-        return "- Manual update (Git not found)"
+console = Console(theme=modrinth_theme)
 
-def create_mrpack(options):
-    success = True
-    errors = []
-    pack_name = "sb-smp.mrpack"
-    
-    # Custom Progress Bar (Modrinth Green)
-    with Progress(
-        SpinnerColumn(spinner_name="monkey"), # A little fun spinner
-        TextColumn("[progress.description]{task.description}"),
-        BarColumn(bar_width=40, complete_style=MODRINTH_GREEN, finished_style=MODRINTH_GREEN),
-        TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
-    ) as progress:
-        
-        task = progress.add_task("[white]Building pack...", total=100)
+def get_size_format(b, factor=1024, suffix="B"):
+    for unit in ["", "K", "M", "G", "T"]:
+        if b < factor:
+            return f"{b:.2f}{unit}{suffix}"
+        b /= factor
 
-        try:
-            with zipfile.ZipFile(pack_name, 'w', zipfile.ZIP_DEFLATED) as zipf:
-                # Step 1: Metadata
-                progress.update(task, advance=20, description="Generating index.json")
-                index_data = {
-                    "formatVersion": 1,
-                    "game": "minecraft",
-                    "versionId": "1.0.0",
-                    "name": "SB-SMP",
-                    "dependencies": {"minecraft": "1.20.1", "fabric-loader": "0.14.22"},
-                    "files": []
-                }
-                zipf.writestr("modrinth.index.json", json.dumps(index_data, indent=4))
+def create_mrpack(output_name: str):
+    cwd = Path.cwd()
+    output_filename = output_name if output_name.endswith(".mrpack") else f"{output_name}.mrpack"
+    output_path = cwd / output_filename
 
-                # Step 2: Changelog
-                if "Generate Changelog" in options:
-                    progress.update(task, advance=20, description="Generating Changelog")
-                    changelog_content = get_git_changelog()
-                    zipf.writestr("changelog.md", f"# Changelog\n\n{changelog_content}")
+    files_to_pack = []
+    total_uncompressed_size = 0
 
-                # Step 3: Overrides
-                progress.update(task, advance=20, description="Packing overrides")
-                path_to_overrides = Path("./overrides")
-                if path_to_overrides.exists():
-                    files = list(path_to_overrides.rglob('*'))
-                    if files:
-                        increment = 40 / len(files)
-                        for file in files:
-                            if file.is_file():
-                                zipf.write(file, arcname=f"overrides/{file.relative_to(path_to_overrides)}")
-                            progress.update(task, advance=increment)
-                else:
-                    errors.append("No 'overrides' folder found. Created an empty base pack.")
-                    progress.update(task, advance=40)
+    for root, dirs, files in os.walk(cwd):
+        for file in files:
+            file_path = Path(root) / file
+            if file_path.suffix.lower() == '.mrpack':
+                continue
+            files_to_pack.append(file_path)
+            total_uncompressed_size += file_path.stat().st_size
 
-        except Exception as e:
-            success = False
-            errors.append(str(e))
-
-    return success, errors
-
-def main():
-    console.print(Panel("[bold]SB-SMP PACK BUILDER[/bold]", style=MODRINTH_GREEN, expand=False))
-
-    options = questionary.checkbox(
-        "Build Settings:",
-        choices=[
-            questionary.Choice("Include Configs", checked=True),
-            questionary.Choice("Include Scripts", checked=True),
-            questionary.Choice("Generate Changelog", checked=True),
-        ],
-        style=questionary.Style([
-            ('selected', f'fg:{MODRINTH_GREEN} bold'),
-            ('pointer', f'fg:{MODRINTH_GREEN} bold'),
-            ('highlighted', f'fg:{MODRINTH_GREEN}'),
-            ('answer', f'fg:{MODRINTH_GREEN}'),
-        ])
-    ).ask()
-
-    if options is None:
+    if not files_to_pack:
+        console.print("[error.red]Error:[/error.red] No files found in the current directory.")
         return
 
-    success, errors = create_mrpack(options)
+    console.print(f"[mr.green]Modrinth Packager[/mr.green] | [bold.white]{output_filename}[/bold.white]\n")
 
-    # Debug Summary
-    console.print("\n[bold]Post-Build Debug Information:[/bold]")
-    table = Table(show_header=True, header_style=f"bold {MODRINTH_GREEN}")
-    table.add_column("Module")
-    table.add_column("Status")
-    
-    table.add_row("Output Filename", "sb-smp.mrpack")
-    table.add_row("Structure", "[green]OK[/green]" if success else "[red]FAILED[/red]")
-    
-    console.print(table)
+    with Progress(
+        SpinnerColumn(spinner_name="dots", style="mr.green"),
+        TextColumn("[bold white]{task.description}"),
+        BarColumn(bar_width=None, pulse_style=Style(color=MR_GREEN), complete_style="mr.green"),
+        TaskProgressColumn(text_format="[mr.green]{task.percentage:>3.0f}%[/mr.green]"),
+        console=console,
+        transient=True
+    ) as progress:
 
-    if errors:
-        console.print(Panel("\n".join(errors), title="Debug Logs", border_style=ERROR_RED))
-    elif success:
-        console.print(f"\n[bold {MODRINTH_GREEN}]BUILD COMPLETE![/bold {MODRINTH_GREEN}]")
+        task = progress.add_task("Compiling...", total=len(files_to_pack))
+
+        with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            for file in files_to_pack:
+                if file.name == "index.json" and file.parent == cwd:
+                    arcname = file.name
+                else:
+                    arcname = os.path.join("overrides", file.relative_to(cwd))
+
+                zipf.write(file, arcname)
+                time.sleep(0.02)
+                progress.update(task, advance=1, description=f"Packing [status.yellow]{file.name[:20]}[/status.yellow]")
+
+        time.sleep(0.5)
+
+    final_size = output_path.stat().st_size
+    ratio = (1 - (final_size / total_uncompressed_size)) * 100 if total_uncompressed_size > 0 else 0
+
+    # Fixed: Raw string (r"") to prevent SyntaxWarning
+    ascii_header = Text(r"""
+   ____  ____    ____  __  __ ____
+  / ___|| __ )  / ___||  \/  |  _ \
+  \___ \|  _ \  \___ \| |\/| | |_) |
+   ___) | |_) |  ___) | |  | |  __/
+  |____/|____/  |____/|_|  |_|_|
+    """, style="mr.green")
+
+    info_table = Table.grid(padding=(0, 2))
+    info_table.add_column(style="fetch.key", justify="right")
+    info_table.add_column(style="fetch.val")
+    info_table.add_row("PACK", output_filename)
+    info_table.add_row("SIZE", get_size_format(final_size))
+    info_table.add_row("FILES", str(len(files_to_pack)))
+    info_table.add_row("COMP", f"{ratio:.1f}% reduction")
+    info_table.add_row("STATUS", "ready for testing")
+
+    footer = Text("\nThanks for using the streakbusters SMP client.\nMake sure to report any bugs you find.", style="italic grey62")
+
+    # Fixed: Wrapping in Group() to allow Panel to render multiple items
+    render_group = Group(ascii_header, info_table, footer)
+
+    console.print(
+        Panel(
+            render_group,
+            border_style="mr.green",
+            expand=False,
+            padding=(1, 4)
+        )
+    )
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-a", "--auto", action="store_true")
+    parser.add_argument("-n", "--name", default="sb-smp-client")
+    args = parser.parse_args()
+
+    if args.auto:
+        name = args.name
+    else:
+        name = Prompt.ask("[bold.white]Enter pack name[/]", default=args.name)
+
+    try:
+        create_mrpack(name)
+    except Exception as e:
+        # For debugging, you can use console.print_exception() here
+        console.print(f"[error.red]Failure:[/error.red] {e}")
