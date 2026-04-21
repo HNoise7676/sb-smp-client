@@ -105,7 +105,7 @@ def create_mrpack(output_name: str):
     info_table.add_row("COMP", f"{ratio:.1f}% reduction")
     info_table.add_row("STATUS", "ready for testing")
 
-    footer = Text("\nThanks for using the streakbusters SMP client.\nMake sure to report any bugs you find.", style="italic grey62")
+    footer = Text("\nThanks for using the StreakBusters SMP client.\nMake sure to report any bugs you find.", style="italic grey62")
 
     # Fixed: Wrapping in Group() to allow Panel to render multiple items
     render_group = Group(ascii_header, info_table, footer)
