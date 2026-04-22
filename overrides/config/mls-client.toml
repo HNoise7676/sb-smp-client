@@ -1,0 +1,22 @@
+["Moderate Loading Screen"]
+	backgroundColor = 1447446
+	# Default: 100
+	# Range: 0 ~ 100
+	logoOpacity = 100
+	# Default: 100
+	# Range: 0 ~ 100
+	barOpacity = 100
+	modsOnlyOnce = false
+	modIdBlacklist = ["neoforge", "minecraft"]
+	iconSize = 32
+	#Allowed Values: SNOWFLAKES, STACKING
+	screenType = "SNOWFLAKES"
+	#Allowed Values: DOWN, RIGHT, UP, LEFT
+	orientation = "DOWN"
+	cycleSeconds = 20
+	#Show LoadingScreen Over NeoForge LoadingScreen
+	earlyWindowOverlay = true
+	#Set Icon Alpha
+	# Default: 75
+	# Range: 0 ~ 100
+	iconOpacity = 75
