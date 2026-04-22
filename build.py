@@ -2,7 +2,6 @@
 # dependencies = ["rich"]
 # ///
 
-import os
 import zipfile
 import argparse
 import time
@@ -39,32 +38,27 @@ def get_size_format(b, factor=1024, suffix="B"):
         b /= factor
 
 def create_mrpack(output_name: str):
+    start_time = time.perf_counter() # Start the timer
+    
     cwd = Path.cwd()
     output_filename = output_name if output_name.endswith(".mrpack") else f"{output_name}.mrpack"
     output_path = cwd / output_filename
 
+    # Define exclusions
+    EXCLUDED_NAMES = {".git", ".gitignore", "build.py", "README.md", output_filename}
+    
     files_to_pack = []
     total_uncompressed_size = 0
 
-    # Define exclusions
-    EXCLUDED_NAMES = {".git", ".gitignore", "build.py", "README.md"}
-
-    for root, dirs, files in os.walk(cwd):
-        # Modifying dirs in-place allows os.walk to skip excluded directories like .git
-        dirs[:] = [d for d in dirs if d not in EXCLUDED_NAMES]
-
-        for file in files:
-            if file in EXCLUDED_NAMES:
+    # Optimized file discovery using pathlib
+    for path in cwd.rglob('*'):
+        if path.is_file():
+            # Skip excluded files and anything inside excluded directories
+            if any(part in EXCLUDED_NAMES for part in path.parts) or path.suffix == ".mrpack":
                 continue
-
-            file_path = Path(root) / file
-
-            # Skip the output file itself if it already exists
-            if file_path.suffix.lower() == '.mrpack':
-                continue
-
-            files_to_pack.append(file_path)
-            total_uncompressed_size += file_path.stat().st_size
+            
+            files_to_pack.append(path)
+            total_uncompressed_size += path.stat().st_size
 
     if not files_to_pack:
         console.print("[error.red]Error:[/error.red] No files found in the current directory.")
@@ -85,18 +79,18 @@ def create_mrpack(output_name: str):
 
         with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
             for file in files_to_pack:
-                # Modrinth format: index.json is root, everything else is in overrides/
+                # Modrinth format logic
                 if file.name == "modrinth.index.json" and file.parent == cwd:
                     arcname = file.name
                 else:
-                    arcname = os.path.join("overrides", file.relative_to(cwd))
+                    arcname = Path("overrides") / file.relative_to(cwd)
 
                 zipf.write(file, arcname)
-                time.sleep(0.01) # Small delay for visual effect
-                progress.update(task, advance=1, description=f"Packing [status.yellow]{file.name[:20]}[/status.yellow]")
+                progress.update(task, advance=1, description=f"Packing [status.yellow]{file.name[:25]}[/status.yellow]")
 
-        time.sleep(0.5)
-
+    end_time = time.perf_counter()
+    duration = end_time - start_time
+    
     final_size = output_path.stat().st_size
     ratio = (1 - (final_size / total_uncompressed_size)) * 100 if total_uncompressed_size > 0 else 0
 
@@ -115,6 +109,7 @@ def create_mrpack(output_name: str):
     info_table.add_row("SIZE", get_size_format(final_size))
     info_table.add_row("FILES", str(len(files_to_pack)))
     info_table.add_row("COMP", f"{ratio:.1f}% reduction")
+    info_table.add_row("TIME", f"{duration:.2f}s") # Added time display
     info_table.add_row("STATUS", "ready for testing")
 
     footer = Text("\nThanks for using the StreakBusters SMP client.\nMake sure to report any bugs you find.", style="italic grey62")
