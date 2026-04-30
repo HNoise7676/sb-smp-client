@@ -1,11 +1,27 @@
 {
-  "favorites": [],
+  "favorites": [
+    {
+      "stack": "item:simulated:physics_assembler",
+      "recipe": "simulated:physics_assembler"
+    }
+  ],
   "lookup_history": [
+    "item:simulated:physics_assembler",
     "item:minecraft:cherry_stairs",
     "item:biomesoplenty:blood_bucket",
     "item:biomesoplenty:flesh"
   ],
-  "craft_history": [],
+  "craft_history": [
+    "regions_unexplored:mauve_boat",
+    "minecraft:stone_sword",
+    "minecraft:stone_axe",
+    "minecraft:torch",
+    "minecraft:stick",
+    "minecraft:stone_pickaxe",
+    "minecraft:wooden_pickaxe",
+    "regions_unexplored:mauve_planks",
+    "minecraft:crafting_table"
+  ],
   "recipe_defaults": {
     "added": [],
     "tags": {},
