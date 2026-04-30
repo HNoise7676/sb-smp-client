@@ -1,0 +1,10 @@
+/chunky start
+/chunky center
+/chunky radius 1000 1000
+/chunky start
+//wand
+//set purple_concrete
+//wand
+//set create:purple_sail
+//set create:purple_sail[facing=up
+//set create:purple_sail[facing=up]

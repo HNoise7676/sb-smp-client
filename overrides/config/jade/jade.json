@@ -7,7 +7,7 @@
     "hideFromGUIs": true,
     "accessibilityModMemory": false,
     "enableAccessibilityPlugin": false,
-    "fluidMode": "ANY",
+    "fluidMode": "NONE",
     "perspectiveMode": "CAMERA",
     "extendedReach": 0.0,
     "debug": false,
@@ -28,7 +28,7 @@
     "overlaySquare": false,
     "flipMainHand": false,
     "autoScaleThreshold": 0.4,
-    "overlayScale": 1.0,
+    "overlayScale": 0.8,
     "overlayAnchorX": 0.5,
     "overlayAnchorY": 0.0,
     "activeTheme": "jade:dark",
@@ -42,6 +42,7 @@
     }
   },
   "history": {
+    "hintOverlayToggle": false,
     "themesHash": -328442023
   }
 }

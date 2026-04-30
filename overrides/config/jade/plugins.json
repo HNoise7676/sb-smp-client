@@ -52,19 +52,6 @@
     "painting": true,
     "chiseled_bookshelf": true
   },
-  "jadeaddons": {
-    "equipment_requirement": ""
-  },
-  "jadeaddons.create": {
-    "filter": true,
-    "backtank_capacity": true,
-    "goggles.requires_goggles": true,
-    "goggles": false,
-    "blaze_burner": true,
-    "exact_block": true,
-    "goggles.detailed": false,
-    "placard": true
-  },
   "jade_access": {
     "held_item": true,
     "sign": true,
@@ -85,5 +72,14 @@
     "registry_name": "OFF",
     "block_properties": false,
     "mod_name": true
+  },
+  "gravestone": {
+    "grave": true
+  },
+  "storagedrawers": {
+    "display.stacklimit": true,
+    "main": true,
+    "display.content": true,
+    "display.status": true
   }
 }
