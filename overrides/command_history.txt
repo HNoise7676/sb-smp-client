@@ -1,50 +1,50 @@
-/chunky radius 1000 1000
-/chunky start
-//wand
-//set purple_concrete
-//wand
-//set create:purple_sail
-//set create:purple_sail[facing=up
-//set create:purple_sail[facing=up]
-/tick rate 5
-/tick rate 20
-/tick freeze
-/tick rate 5
+/tick step
+/tick rate 10
 /tick unfreeze
+/gamemode survival MrAvrg
 /tick rate 20
-/player Alex
-/player Alex spawn
-/gamemode survival Alex
-/tp Alex TheBlueNoise
-/player Alex spawn
-/gamemode survival Alex
-/player logan spawn
-/gamemode survival @a[name=!TheBlueNoise]
-/give TheBlueNoise minecraft:command_block
-/tp Logan TheBlueNoise
-/player Mario spawn
-/ride Mario
+//wand
+//set create:glass_fluid_pipe
+//undo
+//set create:framed_glass
+/player MrAvrg spawn
+/tp MrAvrg TheBlueNoise
+/up 1
+/tp MrAvrg TheBlueNoise
+/weather clear
 /gamerule doDaylightCycle true
-/chunky radius 10000 10000
+/tick rate
+/tick freeze
+/tick unfreeze
+/tick freeze
+/tick unfreeze
+/locate structure minecraft:village_plains
+/place structure minecraft:village_plains
+/summon minecraft:ender_dragon
+/kill @e[type=minecraft:ender_dragon]
+/summon minecraft:wither
+/kill @e[type=minecraft:wither]
+/chunky radius 200 200
 /chunky start
-/chunky cancel
-/chunky confirm
-/clear
+/chunky center
 /chunky radius 500 500
 /chunky start
-//wand
-//set tnt
-/player MrAvrg spawn
-/gamemode survival MrAvrg
-/give TheBlueNoise create:cardboard_sword[enchantments={levels:{knockback:255 } } ]
-/tp MrAvrg TheBlueNoise
-/execute at @e[type=minecraft:skeleton] run summon minecraft:lightning_bolt
-/execute at @e[name=!TheBlueNoise] run summon minecraft:lightning_bolt
-/playsound aeronautics:music_disc.cloud_skipper ambient TheBlueNoise
-/observable allow TheBlueNoise
-/observable config
-/observable run
-/observable run 1000000000
-/tp 992 63 -652
-/effect give TheBlueNoise minecraft:strength 255 255
-/summon tnt
+/tp 45.49 102.00 83.42
+/tick freeze
+/execute as @p at @s run teleport u/s ~ ~ ~ 0 0
+/execute as @p at @s run teleport @s ~ ~ ~ 0 0
+/execute as @p at @s run teleport @s ~ ~ ~ 90 0
+/execute as @p at @s run teleport @s ~ ~ ~ 180 0
+/execute as @p at @s run teleport @s ~ ~ ~ 270 0
+/execute as @p at @s run teleport @s ~ ~ ~ 0 -90
+/execute as @p at @s run teleport @s ~ ~ ~ 0 90
+/tick freeze
+/execute as @p at @s run teleport @s ~ ~ ~ 0 0
+/execute as @p at @s run teleport @s ~ ~ ~ 90 0
+/execute as @p at @s run teleport @s ~ ~ ~ 180 0
+/execute as @p at @s run teleport @s ~ ~ ~ 270 0
+/execute as @p at @s run teleport @s ~ ~ ~ 0 -90
+/execute as @p at @s run teleport @s ~ ~ ~ 0 90
+/tick unfreeze
+/tick freeze
+/tick unfreeze

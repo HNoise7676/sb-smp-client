@@ -18,3 +18,5 @@ else
     # Fallback if no GUI terminal is detected
     eval "$CMD"
 fi
+
+read -rsp $'Press any key or wait 5 seconds to continue...\n' -n 1 -t 5;
