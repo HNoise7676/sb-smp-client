@@ -20,7 +20,6 @@ The following assets are **NOT** covered by the MIT License and are subject to f
 
 1.  **Character Design:** Any and all depictions of the original character known as **"Violet"**. This includes her visual appearance, name, personality traits, and lore.
 2.  **Visual Assets:** All image files (including but not limited to .png, .jpg, .svg, .aseprite, .gif) featuring **Violet**.
-3.  **Restricted Directories:** All files located within the `assets/` and `images/` directories (unless otherwise specified).
 
 ### Usage Restrictions
 * **No Redistribution:** You may not redistribute, repackage, or sell the art assets or character designs.
