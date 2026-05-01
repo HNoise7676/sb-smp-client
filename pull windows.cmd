@@ -1,3 +1,4 @@
-winget install git
-git fetch && git pull
+winget install git.git
+git fetch 
+git pull
 pause
