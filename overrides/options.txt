@@ -22,7 +22,7 @@ narrator:0
 particles:0
 reducedDebugInfo:false
 renderClouds:"false"
-renderDistance:32
+renderDistance:18
 simulationDistance:23
 screenEffectScale:1.0
 soundDevice:""
@@ -48,7 +48,7 @@ mouseSensitivity:0.5
 damageTiltStrength:1.0
 highContrast:false
 narratorHotkey:true
-resourcePacks:["vanilla","fabric","mod_resources","moonlight:merged_pack","file/VanillaTweaks_r909428_MC1.21.x","continuity:default","continuity:glass_pane_culling_fix","file/-1.21.2 Fresh Moves v3.1 (No Animated Eyes).zip","file/Better Enchanting Table v.2.2 (1.13 - 1.21.8).zip","file/Enchanting Table Magic Circle v.2.5 (1.20.5 - 1.21.8).zip","file/animated-items 1.21.x-26.x - v1.6.1.zip","file/§a§lVocal Villagers §r§71.2.zip","file/[1.5] Enhanced Boss Bars.zip","file/sb-smp-bg"]
+resourcePacks:["vanilla","fabric","mod_resources","moonlight:merged_pack","file/VanillaTweaks_r909428_MC1.21.x","continuity:default","continuity:glass_pane_culling_fix","file/-1.21.2 Fresh Moves v3.1 (No Animated Eyes).zip","file/Better Enchanting Table v.2.2 (1.13 - 1.21.8).zip","file/Enchanting Table Magic Circle v.2.5 (1.20.5 - 1.21.8).zip","file/animated-items 1.21.x-26.x - v1.6.1.zip","file/§a§lVocal Villagers §r§71.2.zip","file/[1.5] Enhanced Boss Bars.zip","file/sb-smp-bg","mod/subtle_effects:resourcepacks/biome_color_water_particles"]
 incompatibleResourcePacks:[]
 lastServer:
 lang:en_us
@@ -196,11 +196,11 @@ key_gui.xaero_toggle_dimension:key.keyboard.unknown
 key_key.sophisticatedbackpacks.open_backpack:key.keyboard.i
 key_key.sophisticatedbackpacks.inventory_interaction:key.keyboard.unknown
 key_key.sophisticatedbackpacks.tool_swap:key.keyboard.unknown
-key_key.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
-key_key.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
-key_key.sophisticatedbackpacks.toggle_upgrade_3:key.keyboard.unknown
-key_key.sophisticatedbackpacks.toggle_upgrade_2:key.keyboard.unknown
 key_key.sophisticatedbackpacks.toggle_upgrade_1:key.keyboard.unknown
+key_key.sophisticatedbackpacks.toggle_upgrade_2:key.keyboard.unknown
+key_key.sophisticatedbackpacks.toggle_upgrade_3:key.keyboard.unknown
+key_key.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
+key_key.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
 key_simulated.keyinfo.rotate_mode:key.keyboard.tab
 key_simulated.keyinfo.scroll_up:key.keyboard.unknown
 key_simulated.keyinfo.scroll_down:key.keyboard.unknown

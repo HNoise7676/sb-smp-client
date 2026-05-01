@@ -6,6 +6,11 @@
     }
   ],
   "lookup_history": [
+    {
+      "type": "item",
+      "id": "regions_unexplored:chalk",
+      "amount": 5
+    },
     "item:minecraft:ender_eye",
     "item:minecraft:bucket",
     "item:simulated:red_portable_engine",
@@ -15,15 +20,16 @@
     "item:biomesoplenty:flesh"
   ],
   "craft_history": [
-    "regions_unexplored:mauve_boat",
-    "minecraft:stone_sword",
-    "minecraft:stone_axe",
     "minecraft:torch",
+    "minecraft:stone_axe",
+    "minecraft:stone_sword",
     "minecraft:stick",
     "minecraft:stone_pickaxe",
     "minecraft:wooden_pickaxe",
-    "regions_unexplored:mauve_planks",
-    "minecraft:crafting_table"
+    "minecraft:crafting_table",
+    "regions_unexplored:maple_planks",
+    "regions_unexplored:mauve_boat",
+    "regions_unexplored:mauve_planks"
   ],
   "recipe_defaults": {
     "added": [],
