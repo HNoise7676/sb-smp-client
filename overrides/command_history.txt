@@ -1,16 +1,3 @@
-/tick step
-/tick rate 10
-/tick unfreeze
-/gamemode survival MrAvrg
-/tick rate 20
-//wand
-//set create:glass_fluid_pipe
-//undo
-//set create:framed_glass
-/player MrAvrg spawn
-/tp MrAvrg TheBlueNoise
-/up 1
-/tp MrAvrg TheBlueNoise
 /weather clear
 /gamerule doDaylightCycle true
 /tick rate
@@ -48,3 +35,16 @@
 /tick unfreeze
 /tick freeze
 /tick unfreeze
+/effect give TheBlueNoise minecraft:instant_health infinite
+/effect clear
+/kill
+/locate structure minecraft:stronghold
+/tp @s -1392 ~ 1696
+/give TheBlueNoise minecraft:crossbow[enchantments={levels:{quick_charge:3 , multishot:1 } } ]
+/give TheBlueNoise minecraft:crossbow[enchantments={levels:{quick_charge:4 , multishot:1 } } ]
+/give TheBlueNoise minecraft:crossbow[enchantments={levels:{quick_charge:6 , multishot:1 } } ]
+/spawnpoint
+/give TheBlueNoise minecraft:diamond_pickaxe
+/effect give TheBlueNoise minecraft:haste infinite 255
+/spawnpoint
+/execute at @e run summon tnt
