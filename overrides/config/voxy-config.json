@@ -1,0 +1,17 @@
+{
+  "enabled": false,
+  "enable_rendering": true,
+  "ingest_enabled": true,
+  "section_render_distance": 10.3125,
+  "service_threads": 1,
+  "sub_division_size": 256.0,
+  "render_vanilla_fog": true,
+  "sky_fog_distance": 96,
+  "fog_intensity": 1.0,
+  "fog_density": 0.0,
+  "link_fog_to_render_distance": true,
+  "adapt_cloud_distance": true,
+  "cloud_distance": 0,
+  "dont_use_sodium_builder_threads": false,
+  "ssao_mode": "basic"
+}

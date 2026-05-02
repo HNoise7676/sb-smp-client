@@ -3,9 +3,31 @@
     {
       "stack": "item:simulated:physics_assembler",
       "recipe": "simulated:physics_assembler"
+    },
+    {
+      "stack": "item:sophisticatedbackpacks:iron_backpack",
+      "recipe": "sophisticatedbackpacks:iron_backpack"
+    },
+    {
+      "stack": "item:sophisticatedbackpacks:copper_backpack",
+      "recipe": "sophisticatedbackpacks:copper_backpack"
     }
   ],
   "lookup_history": [
+    "item:minecraft:purple_dye",
+    "item:sophisticatedbackpacks:backpack{\"sophisticatedcore:accent_color\":-7785800,\"sophisticatedcore:main_color\":-7785800}",
+    "item:sophisticatedbackpacks:backpack{\"sophisticatedcore:number_of_inventory_slots\":27,\"sophisticatedcore:number_of_upgrade_slots\":1,\"sophisticatedcore:render_info_tag\":{upgradeItems:[{}]},\"sophisticatedcore:storage_uuid\":[I;1110381529,-495956745,-1815782416,1025402055]}",
+    "item:minecraft:cooked_beef",
+    {
+      "type": "item",
+      "id": "minecraft:beef",
+      "amount": 6
+    },
+    {
+      "type": "item",
+      "id": "minecraft:poisonous_potato",
+      "amount": 3
+    },
     {
       "type": "item",
       "id": "regions_unexplored:chalk",
@@ -20,10 +42,20 @@
     "item:biomesoplenty:flesh"
   ],
   "craft_history": [
-    "minecraft:torch",
-    "minecraft:stone_axe",
-    "minecraft:stone_sword",
+    "farmersdelight:cutting_board",
     "minecraft:stick",
+    "farmersdelight:golden_knife",
+    "minecraft:stone_axe",
+    "biomesoplenty:purple_dye_from_violet",
+    "sophisticatedbackpacks:backpack",
+    "regions_unexplored:maple_boat",
+    "comforts:sleeping_bag_white",
+    "minecraft:copper_ingot_from_smelting_raw_copper",
+    "create:smelting/zinc_ingot_from_raw_ore",
+    "minecraft:furnace",
+    "minecraft:iron_pickaxe",
+    "minecraft:torch",
+    "minecraft:stone_sword",
     "minecraft:stone_pickaxe",
     "minecraft:wooden_pickaxe",
     "minecraft:crafting_table",

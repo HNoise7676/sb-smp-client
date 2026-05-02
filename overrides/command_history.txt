@@ -1,20 +1,3 @@
-/weather clear
-/gamerule doDaylightCycle true
-/tick rate
-/tick freeze
-/tick unfreeze
-/tick freeze
-/tick unfreeze
-/locate structure minecraft:village_plains
-/place structure minecraft:village_plains
-/summon minecraft:ender_dragon
-/kill @e[type=minecraft:ender_dragon]
-/summon minecraft:wither
-/kill @e[type=minecraft:wither]
-/chunky radius 200 200
-/chunky start
-/chunky center
-/chunky radius 500 500
 /chunky start
 /tp 45.49 102.00 83.42
 /tick freeze
@@ -48,3 +31,20 @@
 /effect give TheBlueNoise minecraft:haste infinite 255
 /spawnpoint
 /execute at @e run summon tnt
+/hat
+/trigger hat
+/effect give TheBlueNoise minecraft:dolphins_grace infinite 20
+/effect give TheBlueNoise minecraft:dolphins_grace infinite 255 true
+/item replace entity TheBlueNoise armor.head with biomesoplenty:violet
+/effect give TheBlueNoise minecraft:speed 255 255
+/tp x222 51 77
+/tp 222 51 77
+/chunky center
+/chunky radius 1000 1000
+/chunky start
+/chunky radius 10000 10000
+/chunky cancel
+/chunky center
+/chunky start
+/chunky cancel
+/chunky confirm
