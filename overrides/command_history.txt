@@ -1,50 +1,50 @@
-/chunky start
-/tp 45.49 102.00 83.42
-/tick freeze
-/execute as @p at @s run teleport u/s ~ ~ ~ 0 0
-/execute as @p at @s run teleport @s ~ ~ ~ 0 0
-/execute as @p at @s run teleport @s ~ ~ ~ 90 0
-/execute as @p at @s run teleport @s ~ ~ ~ 180 0
-/execute as @p at @s run teleport @s ~ ~ ~ 270 0
-/execute as @p at @s run teleport @s ~ ~ ~ 0 -90
-/execute as @p at @s run teleport @s ~ ~ ~ 0 90
-/tick freeze
-/execute as @p at @s run teleport @s ~ ~ ~ 0 0
-/execute as @p at @s run teleport @s ~ ~ ~ 90 0
-/execute as @p at @s run teleport @s ~ ~ ~ 180 0
-/execute as @p at @s run teleport @s ~ ~ ~ 270 0
-/execute as @p at @s run teleport @s ~ ~ ~ 0 -90
-/execute as @p at @s run teleport @s ~ ~ ~ 0 90
-/tick unfreeze
-/tick freeze
-/tick unfreeze
-/effect give TheBlueNoise minecraft:instant_health infinite
-/effect clear
-/kill
-/locate structure minecraft:stronghold
-/tp @s -1392 ~ 1696
-/give TheBlueNoise minecraft:crossbow[enchantments={levels:{quick_charge:3 , multishot:1 } } ]
-/give TheBlueNoise minecraft:crossbow[enchantments={levels:{quick_charge:4 , multishot:1 } } ]
-/give TheBlueNoise minecraft:crossbow[enchantments={levels:{quick_charge:6 , multishot:1 } } ]
-/spawnpoint
-/give TheBlueNoise minecraft:diamond_pickaxe
-/effect give TheBlueNoise minecraft:haste infinite 255
-/spawnpoint
-/execute at @e run summon tnt
-/hat
-/trigger hat
-/effect give TheBlueNoise minecraft:dolphins_grace infinite 20
-/effect give TheBlueNoise minecraft:dolphins_grace infinite 255 true
-/item replace entity TheBlueNoise armor.head with biomesoplenty:violet
-/effect give TheBlueNoise minecraft:speed 255 255
-/tp x222 51 77
-/tp 222 51 77
-/chunky center
-/chunky radius 1000 1000
-/chunky start
-/chunky radius 10000 10000
-/chunky cancel
-/chunky center
-/chunky start
-/chunky cancel
-/chunky confirm
+/tp Cetramix_
+/give TheBlueNoise minecraft:crossbow[enchantments={levels:{punch:255 } } ]
+/give TheBlueNoise bow[enchantments={levels:{unbreaking:255 , punch: 255 , multishot: 255 } }]
+/worldborder set 100
+/give TheBlueNoise bow[enchantments={levels:{unbreaking:255 , punch: 255 , multishot: 100 } }]
+/give TheBlueNoise bow[enchantments={levels:{unbreaking:255 , punch: 255 , multishot: 50 } }]
+/worldborder add 10000000 600
+/worldborder add 10 600
+/worldborder add 10000 600
+/worldborder set 50
+/worldborder add 1000 600
+/summon fox ~ ~ ~ {CustomName:"(Bunnyfox)"}
+/summon fox ~ ~ ~ {CustomName:"Bunnyfox",NoAI: true }
+/tp @e[type=fox] ~ 10000 ~
+/kill @e[type=minecraft:fox]
+/navwand
+/give TheBlueNoise minecraft:player_head[custom_name="TheBlueNoise",item_name="TheBlueNoise"]
+/list uuids
+/damage TheBlueNoise 1000
+/damage TheBlueNoise 1000 minecraft:arrow
+/damage TheBlueNoise 1000 minecraft:fall
+/damage TheBlueNoise 1000 minecraft:outside_border
+/damage TheBlueNoise 1000 minecraft:out_of_world
+/difficulty easy
+/summon minecraft:husk
+/player liamwerk7676 spawn
+/kill liamwerk7676
+/player MrAvrg spawn
+/give TheBlueNoise minecraft:player_head
+/gamemode survival MrAvrg
+/figura debug
+/summon minecraft:fox 635.27 63.00 203.32 {NoAI:true , CustomName:"bunnyfox"}
+/time set night
+/give TheBlueNoise minecraft:firework_rocket
+/player MrAvrg spawn
+/green
+//wand
+/green
+/me test
+/me asdadadas
+/me a
+/enchant TheBlueNoise minecraft:lunge 3
+/time set night
+/gamerule doDaylightCycle false
+/time add 100s
+/time add 1s
+/gamerule commandBlockOutput true
+/gamemode creative
+/me test
+/give TheBlueNoise minecraft:jukebox

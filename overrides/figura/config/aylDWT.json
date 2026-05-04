@@ -1,0 +1,54 @@
+{
+  "hover": {
+    "type": "BOOL",
+    "data": false
+  },
+  "spreadWings": {
+    "type": "BOOL",
+    "data": false
+  },
+  "soaringOrDiving": {
+    "type": "BOOL",
+    "data": true
+  },
+  "elytraOnly": {
+    "type": "BOOL",
+    "data": false
+  },
+  "showWings": {
+    "type": "BOOL",
+    "data": true
+  },
+  "wingContrails": {
+    "type": "BOOL",
+    "data": true
+  },
+  "tailContrails": {
+    "type": "BOOL",
+    "data": true
+  },
+  "wag": {
+    "type": "BOOL",
+    "data": false
+  },
+  "showCover": {
+    "type": "BOOL",
+    "data": true
+  },
+  "vanillaSkin": {
+    "type": "BOOL",
+    "data": true
+  },
+  "highVelocity": {
+    "type": "BOOL",
+    "data": true
+  },
+  "flapSFX": {
+    "type": "BOOL",
+    "data": true
+  },
+  "showTail": {
+    "type": "BOOL",
+    "data": true
+  }
+}

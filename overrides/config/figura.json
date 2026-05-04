@@ -1,5 +1,11 @@
 {
   "CONFIG_VERSION": 1,
-  "action_wheel_button": "key.keyboard.unknown",
-  "popup_button": "key.keyboard.unknown"
+  "action_wheel_button": "key.keyboard.keypad.subtract",
+  "action_wheel_mode": 1,
+  "action_wheel_title": 4,
+  "paperdoll_scale": 0.2,
+  "paperdoll_x": 97.0,
+  "paperdoll_y": 95.0,
+  "popup_button": "key.keyboard.unknown",
+  "emojis": 2
 }
