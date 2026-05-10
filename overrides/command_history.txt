@@ -1,50 +1,50 @@
-/tp Cetramix_
-/give TheBlueNoise minecraft:crossbow[enchantments={levels:{punch:255 } } ]
-/give TheBlueNoise bow[enchantments={levels:{unbreaking:255 , punch: 255 , multishot: 255 } }]
-/worldborder set 100
-/give TheBlueNoise bow[enchantments={levels:{unbreaking:255 , punch: 255 , multishot: 100 } }]
-/give TheBlueNoise bow[enchantments={levels:{unbreaking:255 , punch: 255 , multishot: 50 } }]
-/worldborder add 10000000 600
-/worldborder add 10 600
-/worldborder add 10000 600
-/worldborder set 50
-/worldborder add 1000 600
-/summon fox ~ ~ ~ {CustomName:"(Bunnyfox)"}
-/summon fox ~ ~ ~ {CustomName:"Bunnyfox",NoAI: true }
-/tp @e[type=fox] ~ 10000 ~
-/kill @e[type=minecraft:fox]
-/navwand
-/give TheBlueNoise minecraft:player_head[custom_name="TheBlueNoise",item_name="TheBlueNoise"]
-/list uuids
-/damage TheBlueNoise 1000
-/damage TheBlueNoise 1000 minecraft:arrow
-/damage TheBlueNoise 1000 minecraft:fall
-/damage TheBlueNoise 1000 minecraft:outside_border
-/damage TheBlueNoise 1000 minecraft:out_of_world
-/difficulty easy
-/summon minecraft:husk
-/player liamwerk7676 spawn
-/kill liamwerk7676
+/enchant TheBlueNoise minecraft:unbreaking 5
+/enchant TheBlueNoise minecraft:unbreaking 3
+/spawnpoint
+/setblock 761 60 1391 minecraft:ender_chest
+/spawnpoint
+/gamerule keepInventory true
 /player MrAvrg spawn
-/give TheBlueNoise minecraft:player_head
 /gamemode survival MrAvrg
-/figura debug
-/summon minecraft:fox 635.27 63.00 203.32 {NoAI:true , CustomName:"bunnyfox"}
-/time set night
-/give TheBlueNoise minecraft:firework_rocket
-/player MrAvrg spawn
-/green
+/summon minecraft:skeleton
+/summon minecraft:fox ~ ~ ~ {CustomName:"Bunnyfox"}
+/player memeboi917 spawn
+/kill memeboi917
+/player memeboi917_ spawn
+/player memeboi917_~ spawn
+/player memeboi917__ spawn
+/player memeboi917___ spawn
+/player memeboi917____ spawn
+/gamemode survival @a[name=!TheBlueNoise]
+/player s spawn
+/gamemode survival @a[name=!TheBlueNoise]
+/tp @e[type=minecraft:wither_skeleton] TheBlueNoise
+/kill @e[type=minecraft:wither_skeleton
+/kill @e[type=minecraft:wither_skeleton]
+/player memeboi917 spawn
+/gamemode survival memeboi917
+/enchant TheBlueNoise mounts_of_mayhem:lunge 5
+/enchant TheBlueNoise mounts_of_mayhem:lunge 3
+/give TheBlueNoise mounts_of_mayhem:wooden_spear[enchantments={levels:{lunge:5 } }
+/give TheBlueNoise mounts_of_mayhem:wooden_spear[enchantments={levels:{lunge:5 } }]
+/give TheBlueNoise mounts_of_mayhem:wooden_spear[enchantments={levels:{efficiency:4 } } ]
+/give TheBlueNoise mounts_of_mayhem:wooden_spear[enchantments={levels:{lunge:4 } } ]
+/give TheBlueNoise mounts_of_mayhem:wooden_spear[enchantments={levels:{mounts_of_mayhem:lunge:4 } } ]
+/give TheBlueNoise mounts_of_mayhem:wooden_spear[enchantments={levels:{mounts_of_mayhem:lunge: } } ]
+/give TheBlueNoise mounts_of_mayhem:wooden_spear[enchantments={levels:{mounts_of_mayhem:lunge } } ]
+/give TheBlueNoise mounts_of_mayhem:wooden_spear[enchantments={levels:{"mounts_of_mayhem":lunge } } ]
+/give TheBlueNoise mounts_of_mayhem:netherite_spear[enchantments={levels:{"mounts_of_mayhem:lunge":3}}] 1
+/give TheBlueNoise mounts_of_mayhem:netherite_spear[enchantments={levels:{"mounts_of_mayhem:lunge":5}}] 1
+/give TheBlueNoise mounts_of_mayhem:netherite_spear[enchantments={levels:{"mounts_of_mayhem:lunge":50}}] 1
+/give TheBlueNoise mounts_of_mayhem:netherite_spear[enchantments={levels:{"mounts_of_mayhem:lunge":500}}] 1
+/give TheBlueNoise mounts_of_mayhem:netherite_spear[enchantments={levels:{"mounts_of_mayhem:lunge":255}}] 1
 //wand
-/green
-/me test
-/me asdadadas
-/me a
-/enchant TheBlueNoise minecraft:lunge 3
-/time set night
-/gamerule doDaylightCycle false
-/time add 100s
-/time add 1s
-/gamerule commandBlockOutput true
-/gamemode creative
-/me test
-/give TheBlueNoise minecraft:jukebox
+//set purple_concrete
+//set red_concrete
+/sable
+/give TheBlueNoise mounts_of_mayhem:netherite_spear[enchantments={levels:{"mounts_of_mayhem:lunge":5}}] 1
+/give TheBlueNoise mounts_of_mayhem:netherite_spear[enchantments={levels:{"mounts_of_mayhem:lunge":30}}] 1
+/give TheBlueNoise air
+/give TheBlueNoise air[enchantments={levels:{unbreaking:1 } } ]
+/emotes play "Back Flip"
+/emotes play "kazotsky kick"

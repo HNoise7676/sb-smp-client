@@ -11,6 +11,16 @@
     {
       "stack": "item:sophisticatedbackpacks:copper_backpack",
       "recipe": "sophisticatedbackpacks:copper_backpack"
+    },
+    {
+      "stack": {
+        "type": "item",
+        "id": "minecraft:glass_bottle",
+        "amount": 2
+      }
+    },
+    {
+      "stack": "item:minecraft:elytra"
     }
   ],
   "lookup_history": [

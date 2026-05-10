@@ -1,0 +1,15 @@
+[
+  {
+    "user": {
+      "type": "player",
+      "name": "TheBlueNoise",
+      "uniqueId": "67d6c00f-8903-4437-919c-627fbf980623"
+    },
+    "time": 1777920243619,
+    "type": "Profiler (live)",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/uIj6eBBKSW"
+    }
+  }
+]

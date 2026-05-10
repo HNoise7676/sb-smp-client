@@ -1,0 +1,12 @@
+#TPS Detective Config
+[common]
+	#Enable/disable the mod entirely
+	isOn = true
+	#Open TPS Detective screen if server not responding.
+	isFreezeDetectionOn = true
+	#After what amount of seconds of server not responding should be TPS Detective screen shown.
+	# Default: 10
+	# Range: 5 ~ 120
+	freezeDetectionTriggerTime = 5
+	#Send reminder that detective was turned on for longer than 10 min.
+	remindIfOn = false

@@ -1,0 +1,22 @@
+{
+  "totalPatsCounter": {
+    "pats": 280
+  },
+  "entities": {
+    "minecraft:zombie": {
+      "pats": 28
+    },
+    "minecraft:fox": {
+      "pats": 56
+    },
+    "minecraft:skeleton": {
+      "pats": 7
+    },
+    "minecraft:player": {
+      "pats": 134
+    },
+    "minecraft:chicken": {
+      "pats": 50
+    }
+  }
+}
