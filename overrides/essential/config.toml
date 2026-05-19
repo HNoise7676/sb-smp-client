@@ -76,7 +76,7 @@
 		show_username_and_avatar = true
 		set_activity_status_on_discord = true
 		allow_ask_to_join = true
-		show_current_server = false
+		show_current_server = true
 
 	[quality_of_life.zoom]
 		smooth_zoom_animation = false

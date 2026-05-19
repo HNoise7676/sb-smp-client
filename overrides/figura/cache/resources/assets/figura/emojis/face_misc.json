@@ -53,6 +53,13 @@
     "\uE032": ["anime_glasses","glowing_glasses","glasses_glowing","youfellformytrapcard"],
     "\uE033": ["WHAT"],
     "\uE034": ["fault","greasy"],
-    "\u0000": []
+    "\uE035": ["foamy_mouth"],
+	 
+	 "\uE036": ["thonk"],
+	 "\uE037": ["happy"],
+	 "\uE038": ["sheesh"],
+	 "\uE039": ["yassified","yas"],
+	 "\uE03A": ["tired"],
+	 "\uE03B": ["screaming_ball","RAAAGH"]
   }
 }
