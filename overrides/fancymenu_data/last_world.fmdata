@@ -1,7 +1,7 @@
 type = last_world
 
 last_world {
-  is_server = false
-  world = C:/Users/Violet/AppData/Roaming/PrismLauncher/instances/sb-smp-client/minecraft/saves/airship ready
+  is_server = true
+  world = 203.16.163.200:28350
 }
 

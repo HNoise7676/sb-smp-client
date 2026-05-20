@@ -1,1 +1,0 @@
-nameplate.ENTITY:setVisible(false)
