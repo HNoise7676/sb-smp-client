@@ -1,0 +1,54 @@
+#Multiplier for the force applied when a player or mob breaks a tree
+# Default: 1.0
+# Range: 0.01 ~ 100.0
+breakForceMultiplier = 1.0
+#Multiplier for the force applied when an explosion breaks a tree
+# Default: 1.0
+# Range: 0.01 ~ 100.0
+explosionForceMultiplier = 1.0
+#Maximum number of blocks that can be broken in a single tree fall
+# Default: 650
+# Range: 1 ~ 10000
+maxBlocksForTree = 650
+#Whether leaves should be destroyed when a tree falls
+destroyLeaves = false
+#Whether trees should fall in creative mode (only for breaking them yourself)
+treeFallInCreative = true
+#Whether trees should fall when a block is broken, even if it still has ground support
+treeFallOneBlockBreak = false
+#Whether to include corners when checking trees. Sable won't attach those blocks, but some mods have trees that do that
+doCornerDetection = false
+#Whether to include diagonal blocks when checking for leaves, on default trees this is not needed
+doDiagonalLeafDetection = false
+#Whether to include corner blocks when checking for leaves, on default trees this is not needed
+doCornerLeafDetection = false
+#Whether to include diagonal blocks when checking for stems, on default mushrooms this is not needed
+doDiagonalStemDetection = false
+#Whether to include corner blocks when checking for stems, on default mushrooms this is not needed
+doCornerStemDetection = false
+#Whether to include diagonal blocks when checking for caps
+doDiagonalCapDetection = true
+#Whether to include corner blocks when checking for caps, on default mushrooms this is not needed
+doCornerCapDetection = false
+#Whether mushrooms should fall when broken
+doMushroomFall = true
+#Whether to always check leaf distance manually, this is a lot more expensive to do than the default, but some mods have some weird trees that don't work with the default detection
+alwaysManualLeafDistanceCheck = false
+#Maximum number of blocks that can be broken in a single mushroom fall
+# Default: 200
+# Range: 1 ~ 10000
+maxBlocksForMushroom = 200
+#List of stem blocks to be considered as mushroom stems
+stems = ["minecraft:mushroom_stem"]
+#List of cap blocks to be considered as mushroom caps
+caps = ["minecraft:brown_mushroom_block", "minecraft:red_mushroom_block"]
+#List of logs to be considered as tree logs
+logs = ["#minecraft:logs"]
+#List of leaves to be considered as tree leaves
+leaves = ["#minecraft:leaves"]
+#List of blocks that can be attached to tree logs on the side e.g. Cocoa
+sideAttach = ["minecraft:cocoa", "nomansland:shelf_mushroom", "nomansland:shelf_mushroom_block", "nomansland:icicles", "nomansland:beard_moss", "environmental:pinecone", "minecraft:resin_clump", "minecraft:creaking_heart", "minecraft:pale_hanging_moss"]
+#List of blocks that can be attached to a tree on the top e.g. Snow
+topAttach = ["minecraft:moss_carpet", "minecraft:snow", "#minecraft:wool_carpets", "minecraft:leaf_litter"]
+#List of blocks that can hang from a tree on the side e.g. Vine (Vanilla is always included)
+sideHang = ["minecraft:vine", "nomansland:cut_vine"]

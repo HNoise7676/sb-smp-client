@@ -1,29 +1,11 @@
 {
-  "favorites": [
-    {
-      "stack": "item:simulated:physics_assembler",
-      "recipe": "simulated:physics_assembler"
-    },
-    {
-      "stack": "item:sophisticatedbackpacks:iron_backpack",
-      "recipe": "sophisticatedbackpacks:iron_backpack"
-    },
-    {
-      "stack": "item:sophisticatedbackpacks:copper_backpack",
-      "recipe": "sophisticatedbackpacks:copper_backpack"
-    },
-    {
-      "stack": {
-        "type": "item",
-        "id": "minecraft:glass_bottle",
-        "amount": 2
-      }
-    },
-    {
-      "stack": "item:minecraft:elytra"
-    }
-  ],
+  "favorites": [],
   "lookup_history": [
+    "item:create:andesite_alloy",
+    "item:simulated:physics_assembler",
+    "item:simulated:iron_handle",
+    "item:simulated:copper_handle",
+    "item:simulated:white_handle",
     "item:minecraft:purple_dye",
     "item:sophisticatedbackpacks:backpack{\"sophisticatedcore:accent_color\":-7785800,\"sophisticatedcore:main_color\":-7785800}",
     "item:sophisticatedbackpacks:backpack{\"sophisticatedcore:number_of_inventory_slots\":27,\"sophisticatedcore:number_of_upgrade_slots\":1,\"sophisticatedcore:render_info_tag\":{upgradeItems:[{}]},\"sophisticatedcore:storage_uuid\":[I;1110381529,-495956745,-1815782416,1025402055]}",
@@ -46,29 +28,30 @@
     "item:minecraft:ender_eye",
     "item:minecraft:bucket",
     "item:simulated:red_portable_engine",
-    "item:simulated:physics_assembler",
     "item:minecraft:cherry_stairs",
     "item:biomesoplenty:blood_bucket",
     "item:biomesoplenty:flesh"
   ],
   "craft_history": [
-    "farmersdelight:cutting_board",
+    "minecraft:stone_pickaxe",
     "minecraft:stick",
-    "farmersdelight:golden_knife",
+    "minecraft:furnace",
     "minecraft:stone_axe",
+    "minecraft:wooden_pickaxe",
+    "minecraft:oak_planks",
+    "mounts_of_mayhem:wooden_spear_recipe",
+    "minecraft:crafting_table",
+    "farmersdelight:cutting_board",
+    "farmersdelight:golden_knife",
     "biomesoplenty:purple_dye_from_violet",
     "sophisticatedbackpacks:backpack",
     "regions_unexplored:maple_boat",
     "comforts:sleeping_bag_white",
     "minecraft:copper_ingot_from_smelting_raw_copper",
     "create:smelting/zinc_ingot_from_raw_ore",
-    "minecraft:furnace",
     "minecraft:iron_pickaxe",
     "minecraft:torch",
     "minecraft:stone_sword",
-    "minecraft:stone_pickaxe",
-    "minecraft:wooden_pickaxe",
-    "minecraft:crafting_table",
     "regions_unexplored:maple_planks",
     "regions_unexplored:mauve_boat",
     "regions_unexplored:mauve_planks"
